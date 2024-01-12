@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
@@ -35,18 +37,17 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
-    description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+    title: "Application Developer",
+    location: "Gurgaon",
+    description: `
+  I undertook a multifaceted role. I singel-handedly managed.  I crafted the ReactJS and Redux-saga front-end, managed backend with Node.js and Vertx, and leveraged database expertise in PL/SQL and Redis, significantly enhancing UI and backend.`,
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2020 - 2021",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+    title: "Software Engineer",
+    location: "Bangalore",
+    description: ` I specialized in front-end development using NuxtJS for SSR. I contributed to projects involving Node.js (ExpressJS) with Typescript and MSSQL.`,
     icon: React.createElement(CgWorkAlt),
     date: "2019 - 2021",
   },
@@ -62,26 +63,26 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Tweetit",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: corpcommentImg,
   },
-  {
-    title: "rmtDev",
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
-  },
-  {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
-  },
+  // {
+  //   title: "rmtDev",
+  //   description:
+  //     "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+  //   tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+  //   imageUrl: rmtdevImg,
+  // },
+  // {
+  //   title: "Word Analytics",
+  //   description:
+  //     "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+  //   tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+  //   imageUrl: wordanalyticsImg,
+  // },
 ] as const;
 
 export const skillsData = [
