@@ -71,7 +71,7 @@ export const projectsData = [
   {
     title: "Netflix Clone",
     description:
-      "A Netflix clone to explore Next.js  along with Node.js and CSS in JS for styling.",
+      "A Netflix clone to explore Next.js  along with Node.js(TS) and CSS in JS for styling.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux", "CSS in JS"],
     imageUrl: netflixImg,
   },
