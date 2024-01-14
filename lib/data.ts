@@ -65,7 +65,7 @@ export const projectsData = [
     title: "Tweetit",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDb", "TailwindCSS", "Prisma"],
+    tags: ["React", "Next.js", "MongoDB", "TailwindCSS", "Prisma"],
     imageUrl: tweetitImg,
   },
   {
