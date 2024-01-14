@@ -71,7 +71,7 @@ export const projectsData = [
   {
     title: "Netflix Clone",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+      "A Netflix clone to explore Next.js  along with Node.js and CSS in JS for styling.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux","CSS in JS"],
     imageUrl: rmtdevImg,
   },
