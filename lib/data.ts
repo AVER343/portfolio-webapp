@@ -4,7 +4,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact, FaJs, FaVuejs, FaJava } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
+import tweetitImg from "@/public/tweetit.png";
 import netflixImg from "@/public/netflix.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
@@ -66,7 +66,7 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: "https://i.ibb.co/6vjCjWK/OnlyLoGO.png",
+    imageUrl: tweetitImg,
   },
   {
     title: "Netflix Clone",
