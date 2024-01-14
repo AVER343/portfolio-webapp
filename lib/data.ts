@@ -5,7 +5,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact, FaJs, FaVuejs, FaJava } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
+import netflixImg from "@/public/netflix.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -66,14 +66,14 @@ export const projectsData = [
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+    imageUrl: "https://i.ibb.co/6vjCjWK/OnlyLoGO.png",
   },
   {
     title: "Netflix Clone",
     description:
       "A Netflix clone to explore Next.js  along with Node.js and CSS in JS for styling.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux","CSS in JS"],
-    imageUrl: rmtdevImg,
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux", "CSS in JS"],
+    imageUrl: netflixImg,
   },
   // {
   //   title: "Word Analytics",
