@@ -2,7 +2,7 @@
 
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaJs, FaVuejs, FaJava } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
@@ -41,23 +41,22 @@ export const experiencesData = [
     location: "Gurgaon",
     description: `
   I undertook a multifaceted role. I singel-handedly managed.  I crafted the ReactJS and Redux-saga front-end, managed backend with Node.js and Vertx, and leveraged database expertise in PL/SQL and Redis, significantly enhancing UI and backend.`,
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(FaReact),
     date: "2020 - 2021",
   },
   {
     title: "Software Engineer",
     location: "Bangalore",
     description: ` I specialized in front-end development using NuxtJS for SSR. I contributed to projects involving Node.js (ExpressJS) with Typescript and MSSQL.`,
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    icon: React.createElement(FaVuejs),
+    date: "2021 - 2022",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    title: "Software Engineer",
+    location: "Noida",
+    description: `I worked on developing and maintaining dynamic web applications using CreateJs and VanillaJs along with designing and implementing RESTful APIs with Node.js. Through these skills, I contribute to creating interactive and seamless online educational experiences.`,
+    icon: React.createElement(FaJs),
+    date: "2022 - present",
   },
 ] as const;
 
@@ -69,13 +68,13 @@ export const projectsData = [
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: corpcommentImg,
   },
-  // {
-  //   title: "rmtDev",
-  //   description:
-  //     "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-  //   tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-  //   imageUrl: rmtdevImg,
-  // },
+  {
+    title: "Netflix Clone",
+    description:
+      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux","CSS in JS"],
+    imageUrl: rmtdevImg,
+  },
   // {
   //   title: "Word Analytics",
   //   description:

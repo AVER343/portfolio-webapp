@@ -19,30 +19,31 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+        <p>
+          <span className="font-medium">Embarking on a journey</span> to pursue
+          my genuine passion for programming, I've become proficient in a core
+          stack comprising
+          <span className="font-medium">
+            React, Next.js, Node.js, MongoDB and many more
+          </span>
+          . This skill set empowers me to craft dynamic and efficient solutions.
+          Additionally, I am well-versed in TypeScript and Prisma, demonstrating
+          my commitment to staying abreast of emerging technologies. As a
+          proficient IT professional, my history includes successful website
+          design, database management, and excellence in network administration.
+          My technical prowess is complemented by excellent interpersonal
+          skills, facilitating effective engagement with diverse clients.
+          Actively seeking challenges for personal and professional growth, I am
+          dedicated to continuously enhancing my IT skills.
+        </p>
       </p>
 
       <p>
         <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
+        video games <span className="font-medium"> 🎮</span>, watching movies
+        <span className="font-medium"> 🍿</span>, and sleeping
+        <span className="font-medium"> 😴</span>. I also enjoy
+        <span className="font-medium">learning new things 📑</span>.
       </p>
     </motion.section>
   );
