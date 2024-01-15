@@ -32,8 +32,8 @@ export default function About() {
           . This skill set empowers me to craft dynamic and efficient solutions.
           Additionally, I am well-versed in TypeScript and Prisma, demonstrating
           my commitment to staying abreast of emerging technologies. As a
-          proficient IT professional, my history includes successful website
-          design, database management, and excellence in network administration.
+          proficient IT professional, my history includes database management,
+          and maintaining and implementing features for backend and frontend.
           My technical prowess is complemented by excellent interpersonal
           skills, facilitating effective engagement with diverse clients.
           Actively seeking challenges for personal and professional growth, I am
