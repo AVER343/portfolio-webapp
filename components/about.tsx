@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import React from "react";
@@ -24,6 +26,7 @@ export default function About() {
           my genuine passion for programming, I've become proficient in a core
           stack comprising
           <span className="font-medium">
+            {" "}
             React, Next.js, Node.js, MongoDB and many more
           </span>
           . This skill set empowers me to craft dynamic and efficient solutions.
@@ -42,7 +45,7 @@ export default function About() {
         <span className="italic">When I'm not coding</span>, I enjoy playing
         video games <span className="font-medium"> 🎮</span>, watching movies
         <span className="font-medium"> 🍿</span>, and sleeping
-        <span className="font-medium"> 😴</span>. I also enjoy
+        <span className="font-medium"> 😴</span>. I also enjoy {" "}
         <span className="font-medium">learning new things 📑</span>.
       </p>
     </motion.section>
