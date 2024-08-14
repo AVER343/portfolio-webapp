@@ -157,7 +157,7 @@ const IntroductionComponent = (props: {
     <p>
       <span className="font-bold">{greetingText}</span> {nameText}{" "}
       <span className="font-bold">{roleText}</span> {experienceText}{" "}
-      <span className="font-bold">{experienceYearsText}</span> {passionText}{" "}
+      <span className="font-bold">{ experienceYearsText }</span>{ " " }
       <span className="italic">{passionText}</span>.
     </p>
   );
