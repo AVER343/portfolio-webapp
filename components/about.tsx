@@ -2,14 +2,23 @@
 
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-
+import * as UsersActions from "@/actions/users";
 export default function About() {
   const { ref } = useSectionInView("About");
-
+  const [aboutMe, setAboutMe] = useState<any>(null);
+  const getAboutMe = async () =>
+  {
+    const data = await UsersActions.findById();
+    setAboutMe(data.aboutMe!);
+  };
+  useEffect(() =>
+  {
+    getAboutMe();
+  }, []);
   return (
     <motion.section
       ref={ref}
@@ -20,34 +29,48 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
+      { aboutMe && <DescriptionComponent { ...aboutMe } /> }
+    </motion.section>
+  );
+}
+
+const DescriptionComponent = (props: {
+  journeyIntro: string;
+  skillSetIntro: string;
+  skillSetDetails: string;
+  technicalSkills: string;
+  personalGrowth: string;
+  personalInterests: string;
+  hobbies: string[];
+  learning: string;
+}) =>
+{
+  const {
+    journeyIntro,
+    skillSetIntro,
+    skillSetDetails,
+    technicalSkills,
+    personalGrowth,
+    personalInterests,
+    hobbies,
+    learning,
+  } = props;
+  return (
+    <div>
       <p className="mb-3">
         <p>
-          <span className="font-medium">Embarking on a journey</span> to pursue
-          my genuine passion for programming, I've become proficient in a core
-          stack comprising
-          <span className="font-medium">
-            {" "}
-            React, Next.js, Node.js, MongoDB and many more
-          </span>
-          . This skill set empowers me to craft dynamic and efficient solutions.
-          Additionally, I am well-versed in TypeScript and Prisma, demonstrating
-          my commitment to staying abreast of emerging technologies. As a
-          proficient IT professional, my history includes database management,
-          and maintaining and implementing features for backend and frontend.
-          My technical prowess is complemented by excellent interpersonal
-          skills, facilitating effective engagement with diverse clients.
-          Actively seeking challenges for personal and professional growth, I am
-          dedicated to continuously enhancing my IT skills.
+          <span className="font-medium">{ journeyIntro } </span> { skillSetIntro }{ " " }
+          <span className="font-medium">{ skillSetDetails } </span>
+          { technicalSkills } { personalGrowth }
         </p>
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games <span className="font-medium"> 🎮</span>, watching movies
-        <span className="font-medium"> 🍿</span>, and sleeping
-        <span className="font-medium"> 😴</span>. I also enjoy {" "}
-        <span className="font-medium">learning new things 📑</span>.
+        <span className="italic">{ personalInterests }</span>, I { hobbies[0] }
+        <span className="font-medium"> 🎮</span>, { hobbies[1] }
+        <span className="font-medium"> 🍿</span>, and { hobbies[2] }
+        <span className="font-medium"> 😴</span>. I also { learning }.
       </p>
-    </motion.section>
+    </div>
   );
-}
+};

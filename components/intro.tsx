@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Selfie from "@/public/selfie.png";
@@ -12,10 +12,20 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-
+import * as UsersActions from "@/actions/users";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [user, setUser] = useState<any>(null);
+  const yearsOfExperience =
+    new Date().getFullYear() - 2021 + (new Date().getMonth() >= 6 ? 1 : 0);
+  const getUser = async () => {
+    const data = await UsersActions.findById();
+    setUser(data);
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <section
       ref={ref}
@@ -64,18 +74,12 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Ankush Verma.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">
-          {new Date().getFullYear() - 2021} years
-        </span>{" "}
-        of experience. I enjoy building{" "}
-        <span className="italic">sites & apps</span>.{/* My focus is{" "} */}
-        {/*  <span className="underline">
-          MERN stack (MongoDB, Express.js, React, Node.js)
-        </span>
-        , <span className="underline">PostgreSQL</span>,{" "}
-        <span className="underline">TypeScript</span>, etc. */}
+        {user && (
+          <IntroductionComponent
+            {...user.introduction}
+            experienceYearsText={`${yearsOfExperience} years of experience.`}
+          />
+        )}
       </motion.h1>
 
       <motion.div
@@ -100,7 +104,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href={"/CV.pdf"}
+          href={user?.cv}
           download={(() => {
             return;
           })()}
@@ -110,6 +114,8 @@ export default function Intro() {
         </a>
 
         <a
+          rel="noopener"
+          title="Ankush LinkedIn"
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://www.linkedin.com/in/ankush-verma-b3319a162/"
           target="_blank"
@@ -118,6 +124,8 @@ export default function Intro() {
         </a>
 
         <a
+          title="Ankush Github"
+          rel="noopener"
           className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://github.com/AVER343"
           target="_blank"
@@ -128,3 +136,29 @@ export default function Intro() {
     </section>
   );
 }
+
+const IntroductionComponent = (props: {
+  greetingText: string;
+  nameText: string;
+  roleText: string;
+  experienceText: string;
+  experienceYearsText: string;
+  passionText: string;
+}) => {
+  const {
+    greetingText,
+    nameText,
+    roleText,
+    experienceText,
+    experienceYearsText,
+    passionText,
+  } = props;
+  return (
+    <p>
+      <span className="font-bold">{greetingText}</span> {nameText}{" "}
+      <span className="font-bold">{roleText}</span> {experienceText}{" "}
+      <span className="font-bold">{experienceYearsText}</span> {passionText}{" "}
+      <span className="italic">{passionText}</span>.
+    </p>
+  );
+};

@@ -35,30 +35,6 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
-  {
-    title: "Application Developer",
-    location: "Gurgaon",
-    description: `
-  I undertook a multifaceted role. I singel-handedly managed.  I crafted the ReactJS and Redux-saga front-end, managed backend with Node.js and Vertx, and leveraged database expertise in PL/SQL and Redis, significantly enhancing UI and backend.`,
-    icon: React.createElement(FaReact),
-    date: "2020 - 2021",
-  },
-  {
-    title: "Software Engineer",
-    location: "Bangalore",
-    description: ` I specialized in front-end development using NuxtJS for SSR. I contributed to projects involving Node.js (ExpressJS) with Typescript and MSSQL.`,
-    icon: React.createElement(FaVuejs),
-    date: "2021 - 2022",
-  },
-  {
-    title: "Software Engineer",
-    location: "Noida",
-    description: `I worked on developing and maintaining dynamic web applications using CreateJs and VanillaJs along with designing and implementing RESTful APIs with Node.js. Through these skills, I contribute to creating interactive and seamless online educational experiences.`,
-    icon: React.createElement(FaJs),
-    date: "2022 - present",
-  },
-] as const;
 
 export const projectsData = [
   {
@@ -81,21 +57,4 @@ export const projectsData = [
   //   tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
   //   imageUrl: wordanalyticsImg,
   // },
-] as const;
-
-export const skillsData = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Redux",
-  "Next.js",
-  "Framer Motion",
-  "Tailwind",
-  "Git",
-  "Node.js",
-  "Express",
-  "NestJS",
-  "Prisma",
-  "PostgreSQL",
-  "MongoDB",
 ] as const;

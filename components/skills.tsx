@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-
+import * as SkillActions from '@/actions/skills';
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -22,7 +21,27 @@ const fadeInAnimationVariants = {
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
+  interface Skill
+  {
+    skillId: number;
+    userId: number;
+    createdAt: string | null;
+    updatedAt: string | null;
+    skillName: string;
+    proficiencyLevel: string | null;
+    category: string | null;
+  }
 
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const getSkills = async () =>
+  {
+    const data = await SkillActions.findAll();
+    setSkills(data);
+  };
+  useEffect(() =>
+  {
+    getSkills();
+  }, [])
   return (
     <section
       id="skills"
@@ -30,8 +49,8 @@ export default function Skills() {
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
       <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
+      <ul className="flex flex-wrap justify-center gap-4 text-lg text-gray-800">
+        { skills.map((skill, index) => (
           <motion.li
             className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
             key={index}
@@ -43,7 +62,11 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill}
+            {/* <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
+              <div className="bg-blue-600 h-2.5 rounded dark:bg-blue-500" style={ { width: '80%' } }></div>
+            </div>
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.8</span> */}
+            { skill.skillName }
           </motion.li>
         ))}
       </ul>
