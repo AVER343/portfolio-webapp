@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Selfie from "@/public/selfie.png";
@@ -13,19 +13,13 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import * as UsersActions from "@/actions/users";
-export default function Intro() {
+export default function Intro({ user }: { user: any; })
+{
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const [user, setUser] = useState<any>(null);
   const yearsOfExperience =
     new Date().getFullYear() - 2021 + (new Date().getMonth() >= 6 ? 1 : 0);
-  const getUser = async () => {
-    const data = await UsersActions.findById();
-    setUser(data);
-  };
-  useEffect(() => {
-    getUser();
-  }, []);
+
   return (
     <section
       ref={ref}

@@ -1,3 +1,5 @@
+/** @format */
+
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
@@ -5,18 +7,26 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import * as UsersActions from "@/actions/users";
+import * as ExperienceActions from "@/actions/experience";
+import * as SkillActions from "@/actions/skills";
 
-export default function Home(props: any)
+export default async function Home(props: any)
 {
+  const exp = await ExperienceActions.findAll();
+  const userData = await UsersActions.findById();
+  const skills = await SkillActions.findAll();
+
   return (
     <main className="flex flex-col items-center px-4">
-      <Intro />
+      <Intro user={ userData } />
       <SectionDivider />
-      <About />
-      <Skills />
+      <About aboutMe={ userData.aboutMe } />
+      <Skills skills={ skills } />
       <Projects />
-      <Experience />
+      <Experience exp={ exp } />
       <Contact />
     </main>
   );
 }
+

@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import * as SkillActions from '@/actions/skills';
 import { ICON_MAP } from "@/lib/iconMap";
 const fadeInAnimationVariants = {
   initial: {
@@ -20,29 +19,20 @@ const fadeInAnimationVariants = {
   }),
 };
 
-export default function Skills() {
+interface Skill
+{
+  skillId: number;
+  userId: number;
+  createdAt: string | null;
+  updatedAt: string | null;
+  skillName: string;
+  proficiencyLevel: string | null;
+  category: string | null;
+}
+export default function Skills({ skills }: { skills: Skill[]; })
+{
   const { ref } = useSectionInView("Skills");
-  interface Skill
-  {
-    skillId: number;
-    userId: number;
-    createdAt: string | null;
-    updatedAt: string | null;
-    skillName: string;
-    proficiencyLevel: string | null;
-    category: string | null;
-  }
 
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const getSkills = async () =>
-  {
-    const data = await SkillActions.findAll();
-    setSkills(data);
-  };
-  useEffect(() =>
-  {
-    getSkills();
-  }, [])
   return (
     <section
       id="skills"

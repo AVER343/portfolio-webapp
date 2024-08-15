@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import {
   VerticalTimeline,
@@ -9,21 +9,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
-import * as ExperienceActions from "@/actions/experience";
+
 import { ICON_MAP } from "@/lib/iconMap";
-export default function Experience() {
+import { ExperienceModel } from "@/actions/experience";
+export default function Experience({ exp }: { exp: ExperienceModel[]; })
+{
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
-  const [exp, setExp] = useState<ExperienceActions.ExperienceModel[]>([]);
-  const getExp = async () =>
-  {
-    const data = await ExperienceActions.findAll();
-    setExp(data);
-  };
-  useEffect(() =>
-  {
-    getExp();
-  }, [])
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>

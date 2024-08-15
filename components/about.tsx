@@ -2,23 +2,13 @@
 
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import * as UsersActions from "@/actions/users";
-export default function About() {
+export default function About({ aboutMe }: { aboutMe: any; })
+{
   const { ref } = useSectionInView("About");
-  const [aboutMe, setAboutMe] = useState<any>(null);
-  const getAboutMe = async () =>
-  {
-    const data = await UsersActions.findById();
-    setAboutMe(data.aboutMe!);
-  };
-  useEffect(() =>
-  {
-    getAboutMe();
-  }, []);
   return (
     <motion.section
       ref={ref}
@@ -29,7 +19,7 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      { aboutMe && <DescriptionComponent { ...aboutMe } /> }
+      <DescriptionComponent { ...aboutMe } />
     </motion.section>
   );
 }
@@ -57,19 +47,17 @@ const DescriptionComponent = (props: {
   } = props;
   return (
     <div>
-      <p className="mb-3">
         <p>
-          <span className="font-medium">{ journeyIntro } </span> { skillSetIntro }{ " " }
-          <span className="font-medium">{ skillSetDetails } </span>
-          { technicalSkills } { personalGrowth }
-        </p>
+        <span className="font-medium">{ journeyIntro } </span> { skillSetIntro }{ " " }
+        <span className="font-medium">{ skillSetDetails } </span>
+        { technicalSkills } { personalGrowth }
+        
       </p>
-
       <p>
         <span className="italic">{ personalInterests }</span>, I { hobbies[0] }
         <span className="font-medium"> { hobbies[1] }</span>,
         <span className="font-medium"> { hobbies[2] }</span>
-        <span className="font-medium"> </span>. { learning }.
+        <span className="font-medium"> { learning }.</span>
       </p>
     </div>
   );
