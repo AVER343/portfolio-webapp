@@ -10,9 +10,11 @@ import Skills from "@/components/skills";
 import * as UsersActions from "@/actions/users";
 import * as ExperienceActions from "@/actions/experience";
 import * as SkillActions from "@/actions/skills";
+import { revalidatePath } from "next/cache";
 
 export default async function Home(props: any)
 {
+  revalidatePath('/')
   const exp = await ExperienceActions.findAll();
   const userData = await UsersActions.findById();
   const skills = await SkillActions.findAll();
