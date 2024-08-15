@@ -8,7 +8,7 @@ import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata = {
   title: "Ankush Verma | Personal Portfolio",
   description: `Ankush Verma is a full-stack developer with ${new Date().getFullYear() - 2021} years of experience.`,
@@ -35,8 +35,10 @@ export default function RootLayout({
             <Analytics />
             <Toaster position="top-right" />
             <ThemeSwitch />
+
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
