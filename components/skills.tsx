@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import * as SkillActions from '@/actions/skills';
+import { ICON_MAP } from "@/lib/iconMap";
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -62,11 +63,8 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {/* <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 me-2">
-              <div className="bg-blue-600 h-2.5 rounded dark:bg-blue-500" style={ { width: '80%' } }></div>
-            </div>
-            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">8.8</span> */}
-            { skill.skillName }
+            <>
+              { skill.skillName }</>
           </motion.li>
         ))}
       </ul>

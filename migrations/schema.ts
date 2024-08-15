@@ -1,4 +1,4 @@
-import { pgTable, foreignKey, serial, integer, varchar, text, timestamp, date, unique, json } from "drizzle-orm/pg-core"
+import { pgTable, foreignKey, serial, integer, varchar, text, timestamp, date, jsonb, unique, json } from "drizzle-orm/pg-core"
   import { sql } from "drizzle-orm"
 
 
@@ -40,6 +40,15 @@ export const projects = pgTable("projects", {
 	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow(),
 });
 
+export const socialLinks = pgTable("social_links", {
+	linkId: serial("link_id").primaryKey().notNull(),
+	userId: integer("user_id").notNull().references(() => users.userId),
+	platformName: varchar("platform_name", { length: 100 }).notNull(),
+	url: varchar("url", { length: 255 }).notNull(),
+	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow(),
+	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow(),
+});
+
 export const skills = pgTable("skills", {
 	skillId: serial("skill_id").primaryKey().notNull(),
 	userId: integer("user_id").notNull().references(() => users.userId),
@@ -48,15 +57,8 @@ export const skills = pgTable("skills", {
 	category: varchar("category", { length: 100 }),
 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow(),
 	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow(),
-});
-
-export const socialLinks = pgTable("social_links", {
-	linkId: serial("link_id").primaryKey().notNull(),
-	userId: integer("user_id").notNull().references(() => users.userId),
-	platformName: varchar("platform_name", { length: 100 }).notNull(),
-	url: varchar("url", { length: 255 }).notNull(),
-	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow(),
-	updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow(),
+	imageUrl: varchar("image_url", { length: 100 }),
+	metadata: jsonb("metadata"),
 });
 
 export const experience = pgTable("experience", {

@@ -6,7 +6,6 @@ import { FaReact, FaJs, FaVuejs, FaJava } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import tweetitImg from "@/public/tweetit.png";
 import netflixImg from "@/public/netflix.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
   {

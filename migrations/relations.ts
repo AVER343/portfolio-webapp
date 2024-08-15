@@ -1,5 +1,5 @@
 import { relations } from "drizzle-orm/relations";
-import { users, blogs, education, projects, skills, socialLinks, experience } from "./schema";
+import { users, blogs, education, projects, socialLinks, skills, experience } from "./schema";
 
 export const blogsRelations = relations(blogs, ({one}) => ({
 	user: one(users, {
@@ -12,8 +12,8 @@ export const usersRelations = relations(users, ({many}) => ({
 	blogs: many(blogs),
 	educations: many(education),
 	projects: many(projects),
-	skills: many(skills),
 	socialLinks: many(socialLinks),
+	skills: many(skills),
 	experiences: many(experience),
 }));
 
@@ -31,16 +31,16 @@ export const projectsRelations = relations(projects, ({one}) => ({
 	}),
 }));
 
-export const skillsRelations = relations(skills, ({one}) => ({
+export const socialLinksRelations = relations(socialLinks, ({one}) => ({
 	user: one(users, {
-		fields: [skills.userId],
+		fields: [socialLinks.userId],
 		references: [users.userId]
 	}),
 }));
 
-export const socialLinksRelations = relations(socialLinks, ({one}) => ({
+export const skillsRelations = relations(skills, ({one}) => ({
 	user: one(users, {
-		fields: [socialLinks.userId],
+		fields: [skills.userId],
 		references: [users.userId]
 	}),
 }));

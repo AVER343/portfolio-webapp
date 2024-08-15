@@ -67,9 +67,9 @@ const DescriptionComponent = (props: {
 
       <p>
         <span className="italic">{ personalInterests }</span>, I { hobbies[0] }
-        <span className="font-medium"> 🎮</span>, { hobbies[1] }
-        <span className="font-medium"> 🍿</span>, and { hobbies[2] }
-        <span className="font-medium"> 😴</span>. I also { learning }.
+        <span className="font-medium"> { hobbies[1] }</span>,
+        <span className="font-medium"> { hobbies[2] }</span>
+        <span className="font-medium"> </span>. { learning }.
       </p>
     </div>
   );

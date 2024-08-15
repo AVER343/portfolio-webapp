@@ -54,10 +54,10 @@ export default function Experience() {
               }}
             >
               <h3 className="font-semibold capitalize">{ item.role }</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
+              <h3 className="font-semibold  text-gray-400">{ item.companyName }</h3>
+              <p className="font-normal  text-gray-500 !mt-0">{item.location}</p>
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 { item.description }
-                { item.icon }
               </p>
             </VerticalTimelineElement>
           </React.Fragment>
