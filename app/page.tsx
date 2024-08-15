@@ -18,9 +18,9 @@ export default async function Home(props: any)
   const exp = await ExperienceActions.findAll();
   const userData = await UsersActions.findById();
   const skills = await SkillActions.findAll();
-
   return (
     <main className="flex flex-col items-center px-4">
+      { JSON.stringify(userData) }
       <Intro user={ userData } />
       <SectionDivider />
       <About aboutMe={ userData.aboutMe } />
