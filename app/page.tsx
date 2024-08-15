@@ -24,8 +24,8 @@ export default async function Home(props: any)
       <SectionDivider />
       <About aboutMe={ userData.aboutMe } />
       <Skills skills={ skills } />
-      <Projects />
       <Experience exp={ exp } />
+      <Projects />
       <Contact />
     </main>
   );
