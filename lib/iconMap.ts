@@ -12,7 +12,6 @@ import {
   FaAngular,
   FaVuejs,
   FaGitAlt,
-  FaGo,
 } from "react-icons/fa";
 
 // Additional technology icons
