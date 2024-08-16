@@ -93,7 +93,6 @@ export const ICON_MAP: any = {
   FaAngular,
   FaVuejs,
   FaGitAlt,
-  FaGo,
   
   // Additional technology icons
   SiTypescript,
