@@ -9,6 +9,14 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "media.licdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: `photos.app.goo.gl`,
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com"
       }
     ],
   },
